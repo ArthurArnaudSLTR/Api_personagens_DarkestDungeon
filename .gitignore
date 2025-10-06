@@ -1,0 +1,10 @@
+# Pasta de dependências do Node, sempre ignorada.
+node_modules/
+
+# Arquivos de log e cache
+*.log
+npm-debug.log*
+
+# Arquivos de build do TypeScript (se você estiver compilando)
+*.js
+*.map
