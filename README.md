@@ -1,6 +1,6 @@
 API de Personagens (Darkest Dungeon)
 
-Uma API REST simples em Node.js e TypeScript para gerenciar dados de personagens, com foco nas classes e habilidades inspiradas no jogo Darkest Dungeon.
+Uma API REST em Node.js e TypeScript para gerenciar dados de personagens, com foco nas classes e habilidades inspiradas no jogo Darkest Dungeon.
 
 A documentação interativa da API é fornecida via Swagger UI.
 
@@ -17,8 +17,7 @@ Documentação: Swagger UI / OpenAPI 3.0
 Siga estes passos para clonar o repositório, instalar as dependências e rodar o servidor localmente.
 
 1. Clonar o Repositório
-git clone <SUA_URL_DO_REPOSITORIO>
-cd api-personagens-express
+git clone <git clone https://github.com/ArthurArnaudSLTR/Api_personagens_DarkestDungeon.git>
 
 2. Instalar Dependências
 Execute este comando na pasta raiz do projeto (onde está o package.json):
@@ -43,11 +42,6 @@ Acesse:
 http://localhost:3005/api-docs
 
 Endpoints Principais
-Método
-
-Rota
-
-Descrição
 
 GET
 
@@ -65,7 +59,7 @@ PUT
 
 /personagens/:nome
 
-Atualiza completamente um personagem existente.
+Atualiza as informações de um personagem existente.
 
 DELETE
 
