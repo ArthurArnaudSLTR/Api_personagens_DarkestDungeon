@@ -17,7 +17,7 @@ Documentação: Swagger UI / OpenAPI 3.0
 Siga estes passos para clonar o repositório, instalar as dependências e rodar o servidor localmente.
 
 1. Clonar o Repositório
-git clone <git clone https://github.com/ArthurArnaudSLTR/Api_personagens_DarkestDungeon.git>
+git clone git clone https://github.com/ArthurArnaudSLTR/Api_personagens_DarkestDungeon.git 
 
 2. Instalar Dependências
 Execute este comando na pasta raiz do projeto (onde está o package.json):
