@@ -7,13 +7,15 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     
-    "strict": false, // Mantém o deploy funcionando (TS7006 desativado)
+    // Mantenha strict como false para evitar o TS7006 (any implícito)
+    "strict": false, 
     
     "skipLibCheck": true,
     
-    "lib": ["ES2020", "DOM"] // ✅ A maneira correta de incluir APIs globais
+    // ✅ CRÍTICO: Usa esta linha para corrigir 'console' e 'finally'
+    "lib": ["ES2020", "DOM"] 
     
-    // 🛑 REMOVER: Não deve haver uma linha 'types: [...]' aqui.
+    // 🛑 REMOVIDO: A linha "types": ["node"] DEVE ESTAR AUSENTE
   },
   "include": ["src/**/*", "prisma/**/*"], 
   "exclude": ["node_modules", "dist"]
