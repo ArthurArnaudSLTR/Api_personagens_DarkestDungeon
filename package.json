@@ -1,30 +1,36 @@
 {
   "name": "api-dd",
   "version": "1.0.0",
-  "main": "index.js",
-  "engines": {
-    "node": "22.x"
-  },
+  "description": "API de personagens Darkest Dungeon com Node.js, TypeScript e Prisma",
+  "main": "dist/index.js",
   "scripts": {
-    "dev": "tsx watch src/index.ts",
-    "build": "npx prisma generate && tsc && cp -r src/generated dist/",
+    "dev": "nodemon src/index.ts",
+    "build": "tsc",
     "start": "node dist/index.js",
-    "prisma:generate": "npx prisma generate"
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:studio": "prisma studio",
+    "seed": "ts-node prisma/seed.ts",
+    "seed:deploy": "prisma migrate deploy && ts-node prisma/seed.ts"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "nodejs",
+    "typescript",
+    "prisma",
+    "postgresql",
+    "express",
+    "swagger",
+    "api",
+    "darkest-dungeon"
+  ],
+  "author": "Arthur Arnaud",
   "license": "ISC",
-  "description": "",
-  "prisma": {
-    "seed": "ts-node prisma/seed.ts"
-  },
   "dependencies": {
     "@prisma/client": "^6.19.0",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
     "pg": "^8.16.3",
-    "prisma": "^6.19.0",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.1"
   },
@@ -32,9 +38,11 @@
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.5",
     "@types/node": "^22.19.1",
+    "@types/swagger-jsdoc": "^6.0.4",
     "@types/swagger-ui-express": "^4.1.8",
     "nodemon": "^3.1.10",
     "ts-node": "^10.9.2",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "prisma": "^6.19.0"
   }
 }
