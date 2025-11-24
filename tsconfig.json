@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ES2020", 
+    "target": "ES2020",
     "module": "commonjs",
     "rootDir": "./", 
     "outDir": "./dist",
@@ -9,11 +9,10 @@
     "strict": true,
     "skipLibCheck": true,
 
-    "types": ["node"], 
     
+
     "lib": ["ES2020"] 
   },
-  
   "include": ["src/**/*", "prisma/**/*"], 
   "exclude": ["node_modules", "dist"]
 }
