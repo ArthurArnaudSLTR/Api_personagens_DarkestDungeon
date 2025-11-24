@@ -1,10 +1,21 @@
 # Pasta de dependências do Node, sempre ignorada.
 node_modules/
 
+# 🛑 NOVO: ARQUIVOS DE SEGURANÇA E CACHE DE AMBIENTE
+.env             # Crucial: Ignora o arquivo de credenciais do banco.
+.env.local       # Ignora variações locais de ambiente.
+
 # Arquivos de log e cache
 *.log
 npm-debug.log*
 
-# Arquivos de build do TypeScript (se você estiver compilando)
-*.js
-*.map
+# ⚙️ ARQUIVOS GERADOS PELO TYPESCRIPT/PRISMA
+# Se sua pasta de build for 'dist' (a mais comum), ignore toda a pasta:
+/dist/
+/build/
+
+# Pasta do Prisma Client gerado (onde o 'prisma generate' coloca o código)
+/src/generated/prisma/
+
+# Arquivos de cache e sessão do SO
+.DS_Store

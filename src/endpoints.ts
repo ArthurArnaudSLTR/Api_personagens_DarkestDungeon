@@ -1,45 +1,49 @@
-import { personagens } from "./Dados/dados_personagens";
 import { app } from './index';
+import { prisma} from './lib/Prisma';
 
 // GET /personagens
-app.get("/personagens", (req, res) => {
-    res.json(personagens); 
+app.get("/personagens", async (req, res) => {
+    const personagens = await prisma.personagem.findMany({
+        include: { habilidades: true }
+    });
+    res.json(personagens);
 });
 
 // POST /personagens
-app.post("/personagens", (req, res) => {
-    const novoPersonagem = req.body;
-    personagens.push(novoPersonagem);
-    res.status(201).json(personagens); 
+app.post("/personagens", async (req, res) => {
+    const { nome, descricao } = req.body;
+    const novoPersonagem = await prisma.personagem.create({
+        data: { nome, descricao }
+    });
+    res.status(201).json(novoPersonagem);
 });
 
 // PUT /personagens/:nome
-app.put("/personagens/:nome", (req, res) => {
-    const nomeBusca = req.params.nome.toLowerCase();
-    const index = personagens.findIndex(p => p.nome.toLowerCase() === nomeBusca);
-
-    if (index === -1) {
-        return res.status(404).json({ mensagem: "Personagem não encontrado." });
-    }
+app.put("/personagens/:nome", async (req, res) => {
+    const nomeBusca = req.params.nome;
     const dadosAtualizados = req.body;
-    
-    personagens[index] = { ...personagens[index], ...dadosAtualizados };
 
-    res.json(personagens[index]);
+    try {
+        const personagem = await prisma.personagem.update({
+            where: { nome: nomeBusca },
+            data: dadosAtualizados
+        });
+        res.json(personagem);
+    } catch (error) {
+        res.status(404).json({ mensagem: "Personagem não encontrado." });
+    }
 });
 
 // DELETE /personagens/:nome
-app.delete("/personagens/:nome", (req, res) => {
-    const nomeBusca = req.params.nome.toLowerCase();
+app.delete("/personagens/:nome", async (req, res) => {
+    const nomeBusca = req.params.nome;
 
-    const index = personagens.findIndex(p => p.nome.toLowerCase() === nomeBusca);
-
-    if (index === -1) {
-        return res.status(404).json({ mensagem: "Personagem não encontrado." });
+    try {
+        await prisma.personagem.delete({
+            where: { nome: nomeBusca }
+        });
+        res.status(200).json({ mensagem: `Personagem '${nomeBusca}' excluído com sucesso.` });
+    } catch (error) {
+        res.status(404).json({ mensagem: "Personagem não encontrado." });
     }
-
-    // Remove o personagem do array
-    personagens.splice(index, 1);
-
-    res.status(200).json({ mensagem: `Personagem '${req.params.nome}' excluído com sucesso.` });
 });

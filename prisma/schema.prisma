@@ -1,0 +1,31 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url  = env("DATABASE_URL")
+}
+
+model Personagem {
+  id          Int          @id @default(autoincrement())
+  nome        String       @unique
+  descricao   String
+  habilidades Habilidade[]
+}
+
+model Habilidade {
+  id             Int        @id @default(autoincrement())
+  nome           String
+  tipo           String
+  precisao_base  String
+  mod_dano       String
+  mod_critico    String
+  efeitos        String
+  efeito_proprio String
+  personagemId   Int
+  personagem     Personagem @relation(fields: [personagemId], references: [id])
+
+  @@unique([nome, personagemId])
+}
