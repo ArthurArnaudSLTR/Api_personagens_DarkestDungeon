@@ -2,18 +2,24 @@
   "compilerOptions": {
     "target": "ES2020",
     "module": "commonjs",
-    
-    // ⭐️ NOVO/CRÍTICO: Diz ao TS para resolver módulos como o Node faz.
-    "moduleResolution": "node", 
-    
-    "rootDir": "./", 
+
+    "moduleResolution": "node",
+
+    "rootDir": "./",
     "outDir": "./dist",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": false,
     "skipLibCheck": true,
-    "lib": ["ES2020", "DOM"] 
+    "lib": ["ES2020", "DOM"],
+
+    // ⭐️ CRÍTICO para o erro que você recebeu
+    "types": ["node"]
   },
-  "include": ["src/**/*", "prisma/**/*"], 
-  "exclude": ["node_modules", "dist"]
+
+  // ❗️ Remova o prisma do include (não precisa compilar seed.ts)
+  "include": ["src/**/*"],
+
+  // ❗️ Opcional: excluir seed explicitamente
+  "exclude": ["node_modules", "dist", "prisma/seed.ts"]
 }
