@@ -1,6 +1,6 @@
 import express from "express";
 const swaggerUi = require("swagger-ui-express"); 
-import {  createSwaggerDocument } from "./swagger_config.ts/swagger"; 
+import {  createSwaggerDocument } from "./swagger_config/swagger"; 
 import cors from "cors";
 
 
