@@ -7,16 +7,13 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     
-    // ⚠️ Desabilitar temporariamente a checagem rigorosa para evitar o TS7006 no Express
-    "strict": false, 
+    "strict": false, // Mantém o deploy funcionando (TS7006 desativado)
     
     "skipLibCheck": true,
     
-    // ✅ CRÍTICO: Inclui tipagens para Node e recursos modernos
-    "lib": ["ES2020", "DOM"], 
+    "lib": ["ES2020", "DOM"] // ✅ A maneira correta de incluir APIs globais
     
-    // ✅ Reintroduzir esta linha para que o TS encontre 'process' e 'require'
-    "types": ["node"] 
+    // 🛑 REMOVER: Não deve haver uma linha 'types: [...]' aqui.
   },
   "include": ["src/**/*", "prisma/**/*"], 
   "exclude": ["node_modules", "dist"]
