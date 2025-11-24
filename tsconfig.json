@@ -2,11 +2,22 @@
   "compilerOptions": {
     "target": "ES2020",
     "module": "commonjs",
+    "rootDir": "./", 
+    "outDir": "./dist",
     "esModuleInterop": true,
-
+    "forceConsistentCasingInFileNames": true,
+    
+    // ⚠️ Desabilitar temporariamente a checagem rigorosa para evitar o TS7006 no Express
+    "strict": false, 
+    
+    "skipLibCheck": true,
+    
+    // ✅ CRÍTICO: Inclui tipagens para Node e recursos modernos
     "lib": ["ES2020", "DOM"], 
     
-    "strict": false, 
-    "noImplicitAny": false 
+    // ✅ Reintroduzir esta linha para que o TS encontre 'process' e 'require'
+    "types": ["node"] 
   },
+  "include": ["src/**/*", "prisma/**/*"], 
+  "exclude": ["node_modules", "dist"]
 }
