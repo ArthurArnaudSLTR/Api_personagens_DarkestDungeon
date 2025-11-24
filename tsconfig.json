@@ -2,20 +2,17 @@
   "compilerOptions": {
     "target": "ES2020",
     "module": "commonjs",
+    
+    // ⭐️ NOVO/CRÍTICO: Diz ao TS para resolver módulos como o Node faz.
+    "moduleResolution": "node", 
+    
     "rootDir": "./", 
     "outDir": "./dist",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    
-    // Mantenha strict como false para evitar o TS7006 (any implícito)
-    "strict": false, 
-    
+    "strict": false,
     "skipLibCheck": true,
-    
-    // ✅ CRÍTICO: Usa esta linha para corrigir 'console' e 'finally'
     "lib": ["ES2020", "DOM"] 
-    
-    // 🛑 REMOVIDO: A linha "types": ["node"] DEVE ESTAR AUSENTE
   },
   "include": ["src/**/*", "prisma/**/*"], 
   "exclude": ["node_modules", "dist"]
