@@ -1,22 +1,18 @@
 import express from "express";
-const swaggerUi = require("swagger-ui-express"); 
-import {  createSwaggerDocument } from "./swagger_config/swagger"; 
+import swaggerUi from "swagger-ui-express";
+import { createSwaggerDocument } from "./swagger_config/swagger";
 import cors from "cors";
-
 
 export const app = express();
 const port = process.env.PORT || 3005;
-const swaggerDocument = createSwaggerDocument(Number(port)); 
+const swaggerDocument = createSwaggerDocument(Number(port));
 
-app.use(cors()); //cors
+app.use(cors());
 app.use(express.json());
 
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-
-
-// Inicialização do Servidor
 app.listen(port, () => {
-    console.log(`A API subiu na porta ${port}`)
-    console.log(` Swagger em http://localhost:${port}/api-docs`)
+    console.log(`A API subiu na porta ${port}`);
+    console.log(`Swagger em http://localhost:${port}/api-docs`);
 });
