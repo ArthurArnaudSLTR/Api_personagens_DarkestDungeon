@@ -1,4 +1,5 @@
-//  O Array de Dados (Personagens)
+import { Personagem, Habilidade } from "./modelo";
+
 export const personagens: Personagem[] = [
     {
         nome:"Cruzado",

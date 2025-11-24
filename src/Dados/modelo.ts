@@ -1,6 +1,6 @@
 //reformulação para ter um padrão com ts
 
-interface Habilidade {
+export interface Habilidade {
     nome: string;
     tipo: string;
     precisao_base: number | "N/A";
@@ -10,7 +10,7 @@ interface Habilidade {
     efeito_proprio: string;
 }
 
-interface Personagem {
+export interface Personagem {
     nome: string;
     descricao: string;
     habilidades: Habilidade[];
