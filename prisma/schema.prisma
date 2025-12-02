@@ -10,14 +10,16 @@ datasource db {
 
 model Personagem {
   id          Int          @id @default(autoincrement())
+  imagemUrl       String?
   nome        String       @unique
   descricao   String
   habilidades Habilidade[]
+  
 }
 
 model Habilidade {
   id             Int        @id @default(autoincrement())
-  nome           String
+  nome           String     @unique
   tipo           String
   precisao_base  String
   mod_dano       String

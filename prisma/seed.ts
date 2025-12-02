@@ -20,6 +20,7 @@ async function main() {
     data: {
       nome: "Cruzado",
       descricao: "Combatente experiente e leal, o Cruzado já lutou na frente de batalha de centenas de guerras santas. Ele ataca seus inimigos diretamente com fúria justiceira ou desempenha um papel de suporte corporal usando seus bônus de defesa e curas secundárias.",
+      imagemUrl: "https://oyster.ignimgs.com/mediawiki/apis.ign.com/darkest-dungeon/2/23/692411.jpg?width=591&format=jpg&auto=webp&quality=80",
       habilidades: {
         create: [
           {
@@ -96,6 +97,7 @@ async function main() {
     data: {
       nome: "Bufão",
       descricao: "O combate é uma canção com uma introdução e um grande final! Na ofensiva, o Bufão salta de um lado para outro numa dissonância sangrenta, posicionando-se para o glorioso fim nas linhas de frente! Ele também pode ficar atrás, executando melodias cruéis e refrões inquietantes que aterrorizam seus adversários e fortalecem seus aliados.",
+      imagemUrl:"https://oyster.ignimgs.com/mediawiki/apis.ign.com/darkest-dungeon/3/3c/Darkest-dungeon-jester.jpg?width=591&format=jpg&auto=webp&quality=80",
       habilidades: {
         create: [
           {
@@ -172,6 +174,7 @@ async function main() {
     data: {
       nome: "Bandido",
       descricao: "Um rebelde, um criminoso e um ladrão, o Bandido aprimorou suas habilidades com arma de fogo e punhal para causar um efeito devastador. Tanto a distância quanto de perto, ele é sempre eficaz em eliminar seus inimigos. Seja com um tiro de metralha de efeito de área, ou com um sagramento contra um único alvo, as habilidades do bandido têm como objetivo causar dano de várias maneiras.",
+      imagemUrl:"https://oyster.ignimgs.com/mediawiki/apis.ign.com/darkest-dungeon/4/40/692413.jpg?width=591&format=jpg&auto=webp&quality=80",
       habilidades: {
         create: [
           {
@@ -248,6 +251,7 @@ async function main() {
     data: {
       nome: "Médica da Peste",
       descricao: "Uma médica, pesquisadora e alquimista que prefere Ficar nos bastidores, consumindo suas vítimas com habilidades de dano por tempo, como nuvens tóxicas e granadas pestilentas. Ela também é boa no papel de suporte, cegando e confundindo seus oponentes enquanto melhora a sobrevivência do grupo com tônicos que aumentam o dano e remédios para efeitos de sangramento e peste.",
+      imagemUrl:"https://oyster.ignimgs.com/mediawiki/apis.ign.com/darkest-dungeon/6/65/The_plague_doctor_by_cribs-d6pm76n.jpg?width=591&format=jpg&auto=webp&quality=80",
       habilidades: {
         create: [
           {

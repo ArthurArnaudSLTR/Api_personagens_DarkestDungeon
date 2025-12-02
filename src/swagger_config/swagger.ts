@@ -37,6 +37,7 @@ export const createSwaggerDocument = (port: number) => ({
                                 properties: {
                                     nome: { type: 'string' },
                                     descricao: { type: 'string' },
+                                    imagemUrl: { type: 'string', description: 'URL pública da imagem do personagem' },
                                     habilidades: { 
                                         type: 'array',
                                         items: {
@@ -77,6 +78,7 @@ export const createSwaggerDocument = (port: number) => ({
                         'application/json': {
                             example: {
                                 descricao: "Nova descrição do personagem.",
+                                imagemUrl: { type: 'string', description: 'URL pública da imagem do personagem' },
                                 habilidades: [{ nome: "Punir (Aprimorado)", tipo: "Corpo a corpo" }]
                             },
                         },
