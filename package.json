@@ -27,8 +27,6 @@
   "author": "Arthur Arnaud",
   "license": "ISC",
   "dependencies": {
-    "@types/node": "^22.19.1",
-
     "@prisma/client": "^6.19.0",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
@@ -38,6 +36,7 @@
     "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
+      "@types/node": "^22.19.1",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.5",
     "@types/swagger-jsdoc": "^6.0.4",
