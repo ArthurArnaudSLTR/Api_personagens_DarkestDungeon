@@ -12,7 +12,6 @@
     "prisma:studio": "prisma studio",
     "seed": "ts-node prisma/seed.ts",
     "seed:deploy": "prisma migrate deploy && ts-node prisma/seed.ts",
-    
     "fix:migration": "node scripts/fix-migration.js"
   },
   "keywords": [
@@ -43,8 +42,8 @@
     "@types/swagger-jsdoc": "^6.0.4",
     "@types/swagger-ui-express": "^4.1.8",
     "nodemon": "^3.1.10",
+    "prisma": "^6.19.0",
     "ts-node": "^10.9.2",
-    "typescript": "^5.9.3",
-    "prisma": "^6.19.0"
+    "typescript": "^5.9.3"
   }
 }
